@@ -14,7 +14,7 @@
     "content_scripts": [
         {
           "js": [
-            "script.js"
+            "index.js"
           ],
           "matches": [
             "https://hallmark.atlassian.net/jira/software/c/projects/DOM/boards/*"
