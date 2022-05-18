@@ -9,9 +9,10 @@ let readyToMigrateButton = document.getElementById(readyToMigrateID);
 
 doneButton.addEventListener("click", async () => {
   let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-
+  
   chrome.scripting.executeScript({
     target: { tabId: tab.id },
+    files: ['index.js'],
     function: toggleVisibility(doneID),
   });
 });
@@ -21,6 +22,7 @@ verifyInProdButton.addEventListener("click", async () => {
 
   chrome.scripting.executeScript({
     target: { tabId: tab.id },
+    files: ['index.js'],
     function: toggleVisibility(verifyInProdID),
   });
 });
@@ -30,6 +32,7 @@ readyToMigrateButton.addEventListener("click", async () => {
 
   chrome.scripting.executeScript({
     target: { tabId: tab.id },
+    files: ['index.js'],
     function: toggleVisibility(readyToMigrateID),
   });
 });
@@ -38,6 +41,7 @@ readyToMigrateButton.addEventListener("click", async () => {
 // current page
 function toggleVisibility(dataId) {
     alert("toggling visibility for " + dataId);
+    alert(document.body.innerText);
 }
     //data-id "Done" = 1199
     //data-id "Verifying in Production" = 1232
