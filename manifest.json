@@ -7,11 +7,18 @@
         "activeTab",
         "scripting"
       ],
-    "background": {
-      "service_worker": "background.js"
-    },
     "action": {
         "default_popup": "index.html",
         "default_title": "Hallmark DOM Customizer Settings"
-    }
+    },
+    "content_scripts": [
+        {
+          "js": [
+            "script.js"
+          ],
+          "matches": [
+            "https://hallmark.atlassian.net/jira/software/c/projects/DOM/boards/*"
+          ]
+        }
+      ]
 }
