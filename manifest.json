@@ -1,0 +1,10 @@
+{
+    "name": "HMK DOM Customizer",
+    "version": "1.0.0",
+    "description": "making standups easier est. 2022",
+    "manifest_version": 3,
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {}
+}
