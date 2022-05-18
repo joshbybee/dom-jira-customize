@@ -3,8 +3,15 @@
     "version": "1.0.0",
     "description": "making standups easier est. 2022",
     "manifest_version": 3,
+    "permissions": [
+        "activeTab",
+        "scripting"
+      ],
     "background": {
       "service_worker": "background.js"
     },
-    "action": {}
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "Hallmark DOM Customizer Settings"
+    }
 }

@@ -1,5 +1,15 @@
 chrome.runtime.onInstalled.addListener(async () => {
-    let url = chrome.runtime.getURL("hello.html");
-    let tab = await chrome.tabs.create({ url });
-    console.log(`Created tab ${tab.id}`);
+    
+  });
+
+  function doWork() {
+  }
+  
+  chrome.action.onClicked.addListener((tab) => {
+    if(!tab.url.includes("chrome://")) {
+      chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        function: doWork
+      });
+    }
   });
